@@ -254,7 +254,7 @@ export default function AWSCloudClubWebsite() {
 
             <div className='mb-8 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 max-w-2xl mx-auto'>
               <p className='text-2xl md:text-3xl font-bold mb-2'>
-                𝗔𝗿𝗲 𝘆𝗲𝘄 𝗿𝗲𝗮𝗱𝘆? 𝗜'𝗺 𝗦𝗨𝗘𝗘𝗘𝗘 𝗿𝗲𝗮𝗱𝘆! ✨
+                {`𝗔𝗿𝗲 𝘆𝗲𝘄 𝗿𝗲𝗮𝗱𝘆? 𝗜'𝗺 𝗦𝗨𝗘𝗘𝗘𝗘 𝗿𝗲𝗮𝗱𝘆! ✨`}
               </p>
               <p className='text-lg text-green-100'>
                 Join Hebi 🐍 on a journey of growth and discovery in the AWS
@@ -327,11 +327,11 @@ export default function AWSCloudClubWebsite() {
                 </div>
               </AccordionTrigger>
               <AccordionContent className='text-green-700 text-lg leading-relaxed ml-14'>
-                To cultivate the Philippines' most vibrant ecosystem of cloud
+                {`To cultivate the Philippines' most vibrant ecosystem of cloud
                 computing professionals, where every student can grow, flourish,
                 and branch out into successful AWS careers. Like a mighty
                 forest, we aim to create a sustainable community that nurtures
-                innovation, collaboration, and continuous learning.
+                innovation, collaboration, and continuous learning.`}
               </AccordionContent>
             </AccordionItem>
 
@@ -448,7 +448,7 @@ export default function AWSCloudClubWebsite() {
                       ))}
                     </div>
                     <p className='text-green-800 mb-4 italic'>
-                      "{testimonial.content}"
+                      {`"{testimonial.content}"`}
                     </p>
                     <div className='flex items-center'>
                       <div className='bg-green-100 p-2 rounded-full mr-3'>
@@ -680,8 +680,8 @@ export default function AWSCloudClubWebsite() {
                   Constitution
                 </CardTitle>
                 <CardDescription className='text-green-700'>
-                  The fundamental principles that root our organization's
-                  structure and values
+                  {`The fundamental principles that root our organization's
+                  structure and values`}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -750,9 +750,9 @@ export default function AWSCloudClubWebsite() {
                 <span className='ml-3 text-xl font-bold'>AWS Cloud Club</span>
               </div>
               <p className='text-green-100 mb-4'>
-                University of Cabuyao's thriving ecosystem for cloud computing
+                {`University of Cabuyao's thriving ecosystem for cloud computing
                 growth, where every student can flourish alongside Hebi 🐍 in
-                their AWS journey.
+                their AWS journey.`}
               </p>
               <div className='flex space-x-4'>
                 <Button
