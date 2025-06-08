@@ -110,7 +110,7 @@ export default function AWSCloudClubWebsite() {
       date: 'TBA',
       time: '1:00 PM - 7:00 PM',
       description: 'Southern Luzon leg of premier AWS event for students',
-      type: 'Workshop',
+      type: 'Conference',
       icon: <Sprout className='h-5 w-5' />,
     },
   ];
@@ -151,48 +151,43 @@ export default function AWSCloudClubWebsite() {
   return (
     <div className='min-h-screen bg-gradient-to-br from-green-50 to-emerald-50'>
       {/* Navigation */}
-      <nav className='bg-white/90 backdrop-blur-sm border-b border-green-200 sticky top-0 z-50 shadow-sm'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='flex justify-between items-center h-16'>
+      <nav className='fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full px-4'>
+        <div className='bg-white/90 backdrop-blur-md border border-green-200/50 rounded-full shadow-lg px-6 py-3'>
+          <div className='flex justify-between items-center'>
             <div className='flex items-center'>
-              <div className='flex-shrink-0 flex items-center'>
-                <div className='relative'>
-                  <Leaf className='h-8 w-8 text-green-600' />
-                  <div className='absolute -top-1 -right-1 text-xs'>🐍</div>
-                </div>
-                <span className='ml-3 text-xl font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent'>
-                  AWS Cloud Club
-                </span>
-              </div>
+              <span className='ml-2 text-lg font-bold bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent'>
+                AWS Cloud Club
+              </span>
             </div>
 
             {/* Desktop Navigation */}
-            <div className='hidden md:block'>
-              <div className='ml-10 flex items-baseline space-x-1'>
+            <div className='hidden lg:block'>
+              <div className='flex items-center space-x-1'>
                 {navigationItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className='text-green-700 hover:text-green-900 hover:bg-green-100 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1'
+                    className='text-green-700 hover:text-green-900 hover:bg-green-100/80 px-3 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1'
                   >
                     {item.icon}
-                    {item.name}
+                    <span className='hidden xl:inline'>{item.name}</span>
                   </Link>
                 ))}
               </div>
             </div>
 
             {/* Mobile menu button */}
-            <div className='md:hidden'>
+            <div className='lg:hidden'>
               <Button
                 variant='ghost'
                 size='sm'
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className='rounded-full hover:bg-green-100/80'
               >
                 {mobileMenuOpen ? (
-                  <X className='h-6 w-6' />
+                  <X className='h-5 w-5' />
                 ) : (
-                  <Menu className='h-6 w-6' />
+                  <Menu className='h-5 w-5' />
                 )}
               </Button>
             </div>
@@ -201,19 +196,21 @@ export default function AWSCloudClubWebsite() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className='md:hidden'>
-            <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-sm border-t border-green-200'>
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className='text-green-700 hover:text-green-900 hover:bg-green-100 block px-3 py-2 rounded-md text-base font-medium flex items-center gap-2'
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.icon}
-                  {item.name}
-                </Link>
-              ))}
+          <div className='lg:hidden mt-2'>
+            <div className='bg-white/95 backdrop-blur-md border border-green-200/50 rounded-2xl shadow-lg p-4'>
+              <div className='grid grid-cols-2 gap-2'>
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className='text-green-700 hover:text-green-900 hover:bg-green-100/80 px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all duration-200'
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.icon}
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}
